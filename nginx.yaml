@@ -36,6 +36,7 @@ spec:
     metadata:
       labels:
         app: nginx
+        version: ${VERSION}
     spec:
       containers:
         - name: nginx
