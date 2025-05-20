@@ -68,7 +68,7 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-    - host: nginx.example.com
+    - host: nginx.my.org
       http:
         paths:
           - path: /
