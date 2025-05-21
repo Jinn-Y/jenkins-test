@@ -30,7 +30,7 @@ data:
     <body>
         <h1>Hello from ConfigMap!</h1>
         <h2>this is version ${VERSION}</h2>
-        <h2>this is ${COLOR} 环境</h2>
+        <h2>this is ${COLOR} environment</h2>
     </body>
     </html>
 ---
