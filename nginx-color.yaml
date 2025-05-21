@@ -5,6 +5,8 @@ kind: ConfigMap
 metadata:
   name: nginx-config-${COLOR}
   namespace: default
+  labels:
+    color: ${COLOR}
 data:
   default.conf: |
     server {
@@ -39,6 +41,8 @@ kind: Deployment
 metadata:
   name: nginx-deployment-${COLOR}
   namespace: default
+  labels:
+    color: ${COLOR}
 spec:
   replicas: 2
   selector:
@@ -50,6 +54,7 @@ spec:
       labels:
         app: nginx-${COLOR}
         version: "${VERSION}"
+        color: ${COLOR}
     spec:
       containers:
         - name: nginx-${COLOR}
@@ -80,6 +85,8 @@ kind: Service
 metadata:
   name: nginx-service-${COLOR}
   namespace: default
+  labels:
+    color: ${COLOR}
 spec:
   selector:
     app: nginx-${COLOR}
@@ -94,6 +101,8 @@ kind: Ingress
 metadata:
   name: nginx-ingress-${COLOR}
   namespace: default
+  labels:
+    color: ${COLOR}
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
